@@ -160,3 +160,49 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+.button-add {
+    background-color: #2d89ef; /* azul */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button-clear {
+    background-color: #666; /* gris oscuro */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button-clear:hover:enabled {
+    background-color: #4d4d4d;
+}
+
+.button-clear:disabled,
+.button-restart:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+.button-restart {
+    background-color: #a52a2a; /* rojo/marrón */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button-restart:hover:enabled {
+    background-color: #7b1c1c;
+}
