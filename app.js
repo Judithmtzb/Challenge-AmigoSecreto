@@ -1,8 +1,6 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-
 let amigos = [];
 
-// Agrega un nuevo amigo a la lista
+// Agregar amigo
 function agregarAmigo() {
     let valorInput = document.getElementById('amigo').value.trim();
 
@@ -17,11 +15,12 @@ function agregarAmigo() {
     actualizarLista();
     limpiarCaja();
 
-    // Habilita el botón de reinicio si hay al menos un amigo
+    // Habilitar botones al tener amigos
     document.getElementById('btn-reiniciar').disabled = false;
+    document.getElementById('btn-limpiar').disabled = false;
 }
 
-// Actualiza la lista visual de amigos en el DOM
+// Actualizar lista de amigos
 function actualizarLista() {
     let lista = document.getElementById('listaAmigos');
     lista.innerHTML = '';
@@ -31,12 +30,24 @@ function actualizarLista() {
     });
 }
 
-// Limpia el campo de texto
+// Limpiar solo el input
 function limpiarCaja() {
     document.querySelector('#amigo').value = '';
 }
 
-// Sortea un amigo al azar
+// Limpiar input y lista de amigos
+function limpiarTodo() {
+    amigos = [];
+    document.getElementById('listaAmigos').innerHTML = '';
+    limpiarCaja();
+    document.getElementById('resultado').innerHTML = '';
+
+    // Deshabilitar botones porque ya no hay nombres
+    document.getElementById('btn-reiniciar').disabled = true;
+    document.getElementById('btn-limpiar').disabled = true;
+}
+
+// Sorteo
 function sortearAmigo() {
     if (amigos.length === 0) {
         alert('No hay amigos disponibles para el sorteo');
@@ -44,22 +55,21 @@ function sortearAmigo() {
     }
 
     let indiceAleatorio = Math.floor(Math.random() * amigos.length);
-    console.log('Índice aleatorio generado:', indiceAleatorio);
-
     let amigoSorteado = amigos[indiceAleatorio];
-    console.log("Amigo sorteado:", amigoSorteado);
 
-    document.getElementById('resultado').innerHTML = 
+    document.getElementById('resultado').innerHTML =
         `<li>El amigo sorteado es: <strong>${amigoSorteado}</strong></li>`;
 }
 
-// Reinicia el juego
+// Reiniciar juego completo
 function reiniciarJuego() {
     amigos = [];
     document.getElementById('listaAmigos').innerHTML = '';
     document.getElementById('resultado').innerHTML = '';
     alert('Juego reiniciado. Puedes agregar nuevos amigos');
 
-    // Deshabilita el botón hasta que se agregue un nuevo amigo
+    // Deshabilitar botones
     document.getElementById('btn-reiniciar').disabled = true;
+    document.getElementById('btn-limpiar').disabled = true;
 }
+
