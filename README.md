@@ -50,7 +50,7 @@ El código es modular, lo que facilita modificaciones futuras.
 🚀 Cómo ejecutar
 
 Clona el repositorio o descarga el proyecto.
-git clone [https://github.com/usuario/amigo-secreto.git](https://github.com/Judithmtzb/Challenge-AmigoSecreto.git)
+Git clone [https://github.com/usuario/amigo-secreto.git](https://github.com/Judithmtzb/Challenge-AmigoSecreto.git)
 
 Abre el archivo index.html en tu navegador preferido.
 Ingresa los nombres de los participantes y comienza el sorteo.
